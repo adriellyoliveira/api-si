@@ -1,9 +1,5 @@
-import http from "http";
-import { url } from "inspector";
 
-const servidor = http.createServer((req, res) => {
-
-	let produtos = [
+const produtos = [
 		{	nome: "Placa Mãe", 
 			preco: 1969.99, 
 			descricao: "Placa-Mãe MSI X870E GAMING PLUS WIFI, AMD, AM5, ATX, DDR5, Wi-Fi",
@@ -90,34 +86,20 @@ const servidor = http.createServer((req, res) => {
 	
 	
 
-	let html = `
-	<!DOCTYPE html>
-	<html lang= "pt-br">
-	<head>
-		<meta charset= "UTF-8">
-		<title>PC</title>
-	</head>
-	
-	<body>
-		<h1>Olá, você!</h1>
-		<p>Tabela de Produtos</p>
-		<table border = "1">
-			<tr>
-				<th>Produto</th>
-				<th>Preço</th>
-				<th>Descrição</th>
-				<th>Imagem</th>
-			</tr>
+	export default function gerarTabelaProdutos() {
+    return `
+        <h1>Olá, você!</h1>
+        <p>Tabela de Produtos</p>
 
-			${linhas}
-		</table>
-	</body>
-	</html>
-	`
+        <table border="1">
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Descrição</th>
+                <th>Imagem</th>
+            </tr>
 
-	res.writeHead(200, { 'Content-Type': 'text/html' });  
-	res.end(html);});
-	
-servidor.listen(3000, () => {  
-console.log("Servidor rodando em http://localhost:3000");
-});
+            ${linhas}
+        </table>
+    `;
+}
