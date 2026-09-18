@@ -91,3 +91,15 @@ numeros.forEach((numero) => console.log(numero * 2));
 numeros_dobrados = numeros.map((numero) => (numero * 2));
 
 console.log(numeros_dobrados);
+
+
+---------------------x---------------------------
+
+aula (18/09)
+
+//let lista_number = [1, 2, 3, 4, 5];
+
+	//let lista_number_map = lista_number.map((number) => number * 2)
+	//[2, 4, 6, 8, 10]
+
+	//lista_number.forEach -> percorre e demonstra
