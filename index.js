@@ -1,5 +1,5 @@
 import http from "http";
-import { url } from "inspector";
+import gerarTabelaProdutos from "./produtos.js";
 
 function layout(title, content) {
 	return `
@@ -27,7 +27,7 @@ function paginaInicial() {
 }
 
 function paginaProdutos() {
-	return layout("Produtos", "<h1>Página de Produtos</h1>")
+	return layout("Produtos", gerarTabelaProdutos())
 }
 
 function paginaSobre() {
